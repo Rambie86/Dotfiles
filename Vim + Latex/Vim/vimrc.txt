@@ -1,0 +1,58 @@
+set relativenumber
+set history=1000
+set lazyredraw
+set ttyfast 
+set showmatch
+set nohlsearch
+syntax on
+set showcmd
+set clipboard=unnamed
+set nu rnu
+set showmatch
+set wildmenu
+set encoding=UTF-8
+
+
+call plug#begin()
+
+Plug 'lervag/vimtex'
+
+Plug 'sirver/ultisnips'
+
+Plug 'KeitaNakamura/tex-conceal.vim'
+
+Plug 'preservim/nerdtree'
+
+Plug 'lifepillar/vim-mucomplete'
+
+call plug#end()
+
+"Configuraciones vimtex 
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+let g:Tex_DefaultTargetFormat='pdf'
+let g:Tex_MultipleCompileFormats='pdf'
+
+"Configuraciones tex conceal
+set conceallevel=1
+let g:tex_conceal='abdmg'
+hi Conceal ctermbg=none
+ 
+"Configuraciones Ultisnips 
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+
+"Configuraciones nerdtree 
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+"Configuraciones mucomplete
+set completeopt+=menuone
+set completeopt+=noselect
+set completeopt-=preview
+let g:mucomplete#enable_auto_at_startup = 1
+let g:mucomplete#completion_delay = 1
